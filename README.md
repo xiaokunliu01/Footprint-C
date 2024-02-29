@@ -1,2 +1,2 @@
 # DNase-C
-Scripts used to process DNase-C data
+Scripts used to process Footprint-C data
