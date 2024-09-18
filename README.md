@@ -1,10 +1,9 @@
 # Footprint-C
-Scripts used to process Footprint-C data
+##Scripts used to process Footprint-C data
 
-The following software prerequisites are required to run the pipeline
+##The following software prerequisites are required to run the pipeline
 
 FastQC
-
 Trim Galore (v0.6.10)
 Cutadapt (v4.2)
 HiC-Pro (v3.0.0)
