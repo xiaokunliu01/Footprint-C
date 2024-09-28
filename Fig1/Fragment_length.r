@@ -1,4 +1,4 @@
-setwd("/Footprint-C/fragment_Length/")
+setwd("Footprint-C/fragment_Length/")
 library(RColorBrewer)
 library(ggplot2)
 library(ggpubr)
