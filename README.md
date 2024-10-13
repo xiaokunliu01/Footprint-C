@@ -33,7 +33,7 @@ This repository includes the following:
 3. Scripts related to individual analysis.
 
 
-Footprint-C datasets can be preprocessed using the `#000000` Footprint-C_data_preprocessing/FootprintC_preprocessing.sh script.
+Footprint-C datasets can be preprocessed using the ```Footprint-C_data_preprocessing/FootprintC_preprocessing.sh``` script.
 ```
 bash FootprintC_preprocessing.sh test_data/Footprint-C
 ```
