@@ -34,3 +34,4 @@ This repository includes the following:
 
 
 Footprint-C datasets can be preprocessed using the Footprint-C_data_preprocessing/FootprintC_preprocessing.sh script.
+bash FootprintC_preprocessing.sh test_data/Footprint-C
