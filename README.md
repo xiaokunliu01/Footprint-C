@@ -1,5 +1,7 @@
 # Footprint-C
-Scripts used to process Footprint-C data
+We developed a protocol of Footprint-C, which yields high-resolution chromatin contact maps built upon intact and genuine footprints protected by transcription factor (TF) binding. When analyzed at one-dimensional level, the billions of chromatin contacts from Footprint-C enable genome-wide analysis at single footprint resolution, and reveal preferential modes of local TF cooperative binding. At pairwise contact level, Footprint-C exhibits higher efficiency in identifying chromatin structural features when compared with other Hi-C methods, segregates chromatin interactions emanating from adjacent TF footprints, and uncovers multiway interactions involving different TFs. Altogether, Footprint-C reveals that a rich regulatory lexicon of TF cooperativity underlies both local residence and distal chromatin interactions, in terms of TF identity, valency, and conformational configuration.
+
+This repository contains the code and supporting data used to make a pipeline for analysing Footprint-C data. In this work, We use the human hg38 genome as reference, and we obtained the public datasets of K562 and HEK293T cell lines from Gene Expression Omnibus (GEO) or ENDCODE database.
 
 ## The following software prerequisites are required to run the pipeline
 
