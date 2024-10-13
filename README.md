@@ -26,4 +26,11 @@ StripeCaller
 MEME (v5.4.1)  
 HiCRep (https://github.com/dejunlin/hicrep)  
 
-## General Instructions to run pipeline
+## General Instructions
+This repository includes the following:
+1. Test Footprint-C datasets and TF motif files;
+2. Footprint-C datasets preprocessing scripts;
+3. Scripts related to individual analysis.
+
+
+Footprint-C datasets can be preprocessed using the Footprint-C_data_preprocessing/FootprintC_preprocessing.sh script.
