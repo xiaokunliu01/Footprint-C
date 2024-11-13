@@ -1,5 +1,14 @@
 #/bin/bash
 
+# 1. takes file: .allValidPairs file
+#    applies tool: hicpro2higlass.sh 
+#    produces output: .mcool file
+
+# 2. takes file: .mcool file
+#    applies tool: hicpro2higlass.sh 
+#    produces output: the stratum-adjusted correlation coefficient file
+
+
 # generate .mcool file
 for i in FootprintC_R1 FootprintC_R2 MicroC HiC
 do
