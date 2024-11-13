@@ -1,6 +1,6 @@
 #/bin/bash
 
-# 1. takes file: .allValidPairs file
+# 1. takes file: .allValidPairs file and hg38_chromsize_min.txt file
 #    applies tool: hicpro2higlass.sh 
 #    produces output: .mcool file
 
