@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 1. takes file: .pair file
+# 1. takes file: .pair file and hg38_chromsize.txt file
 #    applies tool: genomeCoverageBed and bedGraphToBigWig
 #    produces output: .bw file
 
