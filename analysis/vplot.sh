@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# plan V-plot
+# 1. takes file: fragment contact pairs file and CTCF motifs file, 
+     applies tools: closestBed, 
+     produces output: v-plot data file.
+
+
+
+# plot V-plot
 mkdir vplot/
 cd vplot/
 
