@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# 1. takes file: fragment contact pairs file and CTCF motifs file, 
-#    applies tools: closestBed, 
-#    produces output: v-plot data file.
+# 1. takes file: fragment contact pairs file and CTCF motifs file
+#    applies tools: closestBed
+#    produces output: v-plot data file
 
 
 
