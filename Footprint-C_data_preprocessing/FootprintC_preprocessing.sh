@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# 1. takes file: Footprint-C fastq file, applies tool: FastQC, and produces output: quality report.
+# 2. takes file: Footprint-C fastq file, applies tools: Trim Galore, and produces output: fastq file of trmming adapter.
+# 3. takes file: fastq file of trmming adapter, applies tools: Cutadapt, and produces output: fastq file of trmming linker.
+# 4. takes file: fastq file of trmming linker, applies tools: HiC-Pro, and produces output: bam file.
+# 5. takes file: bam file, applies tools: bamToBed, and produces output: fragment contact pairs file and fragment length file.
+
 
 mkdir fastqc/
 mkdir trimAdapt/
