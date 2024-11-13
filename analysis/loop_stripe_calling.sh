@@ -1,5 +1,18 @@
 #/bin/bash
 
+# 1. takes file: .allValidPairs file and hg38_chromsize.txt file
+#    applies tool: hicpro2higlass.sh and cooler
+#    produces output: .mcool file
+
+# 2. takes file: .mcool file
+#    applies tool: Mustache or Chromosight
+#    produces output: loops file
+
+# 3. takes file: .mcool file
+#    applies tool: Stripenn or StripeCaller
+#    produces output: stripes file
+
+
 # generate .cool file
 # shuf -n600000000 K562_$i.allValidPairs > K562_$i_600M.allValidPairs
 for i in FootprintC MicroC HiC
@@ -17,7 +30,7 @@ chromosight detect -t12 --pattern=loops_small --min-dist=15000 --max-dist=200000
 done
 
 # call stripes
-# Stripenn and StripeCaller methods
+# Stripenn or StripeCaller methods
 for i in FootprintC MicroC HiC
 do
 mkdir $i
