@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# 1. takes file: .pair file
+#    applies tool: genomeCoverageBed and bedGraphToBigWig
+#    produces output: .bw file
+
+# 2. takes file: .bw file and .motif file
+#    applies tool: computeMatrix and plotProfile in deeptools
+#    produces output: average profile plot
+
 
 # enrichment
 mkdir enrichment/
