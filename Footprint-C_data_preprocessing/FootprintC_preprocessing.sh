@@ -14,9 +14,9 @@
 
 # 4. takes file: fastq file of trimmed linker
 #    applies tools: HiC-Pro
-#    produces output: bam file
+#    produces output: .bam file and .allValidPairs file
 
-# 5. takes file: bam file
+# 5. takes file: .bam file
 #    applies tools: bamToBed
 #    produces output: fragment contact pairs file and fragment length file
 
