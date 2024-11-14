@@ -1,3 +1,4 @@
+# calculate PC1 value
 # 1. takes file: .cool file
 #    applies tool: cooltools
 #    produces output: PC1 value file
