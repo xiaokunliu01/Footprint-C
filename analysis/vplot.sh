@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Generate data for V-plot
 # 1. takes file: fragment contact pairs file and motif file
 #    applies tools: closestBed and vplot.awk script
 #    produces output: v-plot data file
