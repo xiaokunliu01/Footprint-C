@@ -5,6 +5,7 @@ This repository contains the code and supporting data used to make a pipeline fo
 
 ## The following software prerequisites are required to run the pipeline
 
+
 - FastQC (v0.11.8) 
 - Trim Galore (v0.6.10)  
 - Cutadapt (v4.2)  
