@@ -1,4 +1,6 @@
-setwd(dir = "/home/lxk/ad1/DNaseC/DNaseC_paper/response/ZNF143/dimerization/K562/distance_density/homo-homo/")
+# plot Line diagram of interaction distance
+
+setwd(dir = "distance/")
 
 # png("heatmap_cis_dis1k_17list.png", units = "in", width = 10, height = 10, res = 300, bg = "transparent")
 pdf("homo_0.1_-KLF.pdf", width = 4, height = 2.5, bg = "transparent")
