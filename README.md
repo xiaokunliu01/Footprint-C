@@ -4,7 +4,6 @@ We developed a protocol of Footprint-C, which yields high-resolution chromatin c
 This repository contains the code and supporting data used to make a pipeline for analysing Footprint-C data. In this work, We use the human hg38 genome as reference, and we obtained the public datasets of K562 and HEK293T cell lines from Gene Expression Omnibus (GEO) or ENDCODE database. All raw and processed data generated in this study can be obtained at Genome Sequence Archive (GSA) under accession number: HRA004768 (https://ngdc.cncb.ac.cn/gsa-human/s/6t0JFuwn).
 
 ## The following software prerequisites are required to run the pipeline
-
 - FastQC (v0.11.8) 
 - Trim Galore (v0.6.10)  
 - Cutadapt (v4.2)  
