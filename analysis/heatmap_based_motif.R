@@ -1,3 +1,5 @@
+# plot heatmap based motifs
+
 setwd(dir = "/home/lxk/private/Footprint-C/FootprintC_paper/heatmap_CTCF_CTCF/3w/CTCF_MAZ_CTCF/121275_R1/")
 
 # png("tmp4.png", units = "in", width = 10, height = 10, res = 300, bg = "transparent")
