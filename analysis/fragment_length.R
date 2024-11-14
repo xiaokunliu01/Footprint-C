@@ -1,4 +1,4 @@
-# Plot fragment length distribution density map
+# Plot 2D density map of fragment length
 
 setwd("Footprint-C/fragment_Length/")
 library(RColorBrewer)
