@@ -2,7 +2,7 @@
 
 # calculate matrix of heatmap based motifs
 # 1. takes file: .pair file and .motif file
-#    applies tool: closestBed and stat_noextend.awk script
+#    applies tool: closestBed and groupBy in deeptools and stat_noextend.awk script
 #    produces output: matrix of heatmap based motifs
 
 
