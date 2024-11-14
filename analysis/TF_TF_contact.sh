@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# calculate different TF-TF contact
+# 1. takes file: .pair file and .motif file
+#    applies tool: closestBed
+#    produces output: different TF-TF contact and interaction distance
+
+
 for i in CDC5L KLF11 KLF16 KMT2A MTF2 RBAK SP3 TFDP1 VEZF1 ZFP69B
 do
 mkdir $i
