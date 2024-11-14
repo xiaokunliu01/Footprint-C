@@ -1,3 +1,8 @@
+# calculate insulate score
+# 1. takes file: .mcool file
+#    applies tool: cooler and cooltools
+#    produces output: insulation score file
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
