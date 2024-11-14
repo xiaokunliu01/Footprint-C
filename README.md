@@ -32,7 +32,7 @@ This repository includes the following:
 3. Scripts related to individual analysis.
 
 ## Footprint-C Data preprocessing
-Read pairs were first trimmed by the Illumine adapter and bridge linker sequence (AGCCCGGTNNACGCCCGT, both forward and reverse complementary) from both ends by Trim Galore (https://github.com/FelixKrueger/TrimGalore) and Cutadapt (https://github.com/marcelm/cutadapt/). Only read pairs with bridge linker sequence detected and with both mates ≥10 bp after trimming were kept. Valid Footprint-C fragment contact pairs were obtained from the HiC-Pro analysis pipeline. The detailed description and code can be found at https://github.com/nservant/HiC-Pro. In brief, a pair of trimmed fastq files were mapped to the human (hg38) or Drosophila (dm6) genome separately by Bowtie2 with ```--very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end --reorder``` mode. Aligned reads were paired by the read name. Pairs with multiple hits, low MAPQ (<=10), singleton, dangling end, and self-circle were removed. The fragment contact pairs were obtained from the output BAM files containing paired aligned reads by removing PCR duplicates and were used in downstream analyses.
+Read pairs were first trimmed by the Illumine adapter and bridge linker sequence ```(AGCCCGGTNNACGCCCGT, both forward and reverse complementary)``` from both ends by Trim Galore (https://github.com/FelixKrueger/TrimGalore) and Cutadapt (https://github.com/marcelm/cutadapt/). Only read pairs with bridge linker sequence detected and with both mates ≥10 bp after trimming were kept. Valid Footprint-C fragment contact pairs were obtained from the HiC-Pro analysis pipeline. The detailed description and code can be found at https://github.com/nservant/HiC-Pro. In brief, a pair of trimmed fastq files were mapped to the human (hg38) or _Drosophila_ (dm6) genome separately by Bowtie2 with ```--very-sensitive -L 30 --score-min L,-0.6,-0.2 --end-to-end --reorder``` mode. Aligned reads were paired by the read name. Pairs with multiple hits, low MAPQ (<=10), singleton, dangling end, and self-circle were removed. The fragment contact pairs were obtained from the output BAM files containing paired aligned reads by removing PCR duplicates and were used in downstream analyses.
 
 Footprint-C datasets can be preprocessed using the ```Footprint-C_data_preprocessing/FootprintC_preprocessing.sh``` script.  
 Place name FASTQ files as ```<example1>_1.fq.gz``` and ```<example1>_2.fq.gz```
@@ -75,7 +75,7 @@ analysis/insulation_score.py
 ``` 
 
 ## Motif uniqueness analysis
-The fragment contact pairs of Footprint-C and other Hi-C datasets were first converted to single fragment BED files. The Footprint-C fragments less than or equal to 60 bp in length were kept for analysis. The fragments of in situ Hi-C were extended to the nearest GATC site (DpnII). The fragments of BL-Hi-C were extended to the nearest GGCC sites (HaeIII). The fragments of Hi-TrAC were extended to the nearest AATT or CATG sites (MluCI or NlaIII). The fragments of HiCAR were extended to the nearest GTAC sites (CviQI). The fragments of Micro-C were extended ±75 bp from the center base. Fragment coordinates were then intersected with all HOMER motif coordinates by intersectBed in bedtools. Finally, the proportions of fragments from Footprint-C, in situ Hi-C, BL-Hi-C, Hi-TrAC, HiCAR, or Micro-C datasets annotated with zero, one or multiple motifs were calculated.
+The fragment contact pairs of Footprint-C and other Hi-C datasets were first converted to single fragment BED files. The Footprint-C fragments less than or equal to 60 bp in length were kept for analysis. The fragments of _in situ_ Hi-C were extended to the nearest GATC site (DpnII). The fragments of BL-Hi-C were extended to the nearest GGCC sites (HaeIII). The fragments of Hi-TrAC were extended to the nearest AATT or CATG sites (MluCI or NlaIII). The fragments of HiCAR were extended to the nearest GTAC sites (CviQI). The fragments of Micro-C were extended ±75 bp from the center base. Fragment coordinates were then intersected with all HOMER motif coordinates by intersectBed in bedtools. Finally, the proportions of fragments from Footprint-C, _in situ_ Hi-C, BL-Hi-C, Hi-TrAC, HiCAR, or Micro-C datasets annotated with zero, one or multiple motifs were calculated.
 
 The script is
 ```
@@ -100,7 +100,7 @@ analysis/heatmap_based_motif.sh
 And R script ```analysis/plot_heatmap_based_motif.R ``` to visualize
 
 ## Reproducibility analysis
-The stratum-adjusted correlation coefficient using HiCRep73 was calculated for 100-kb resolution contact matrices by parameters settings of ```--h 1 --dBPMax 100000 --binSize 100000```. Comparisons were done between two biological replicates of Footprint-C libraries, or between Footprint-C and Micro-C or in situ Hi-C libraries.
+The stratum-adjusted correlation coefficient using HiCRep73 was calculated for 100-kb resolution contact matrices by parameters settings of ```--h 1 --dBPMax 100000 --binSize 100000```. Comparisons were done between two biological replicates of Footprint-C libraries, or between Footprint-C and Micro-C or _in situ_ Hi-C libraries.
 
 The script is
 ```
