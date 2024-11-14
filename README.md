@@ -32,8 +32,8 @@ This repository includes the following:
 2. Footprint-C datasets preprocessing scripts;
 3. Scripts related to individual analysis.
 
-
-For example, Footprint-C datasets can be preprocessed using the ```Footprint-C_data_preprocessing/FootprintC_preprocessing.sh``` script.  
+## Footprint-C Data preprocessing
+Footprint-C datasets can be preprocessed using the ```Footprint-C_data_preprocessing/FootprintC_preprocessing.sh``` script.  
 Place name FASTQ files as ```<example1>_1.fq.gz``` and ```<example1>_2.fq.gz```
 ```
 bash FootprintC_preprocessing.sh <example1>
