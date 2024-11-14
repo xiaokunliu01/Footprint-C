@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# calculate matrix of heatmap based motifs
+# 1. takes file: .pair file and .motif file
+#    applies tool: closestBed and stat_noextend.awk script
+#    produces output: matrix of heatmap based motifs
+
+
 awk '{print $1"\t"$2"\t"$3"\t"$7"\t"$10}' /mnt/disk1/6/lxk/private/DNase-C/Total_FootprintC_K562/FootprintC_K562_total_UMI_wlink_nochrCLMT.pairs | sort -k1,1 -k2,2n --buffer-size=40% -T ./ --parallel=80 > FootprintC_K562_sort.uppair
 awk '{print $4"\t"$5"\t"$6"\t"$7"\t"$11}' /mnt/disk1/6/lxk/private/DNase-C/Total_FootprintC_K562/FootprintC_K562_total_UMI_wlink_nochrCLMT.pairs | sort -k1,1 -k2,2n --buffer-size=40% -T ./ --parallel=80 > FootprintC_K562_sort.downpair
 
