@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# 1. takes file: .allValidPairs file and .motif file
+#    applies tool: closestBed and stat_noextent.awk script
+#    produces output: .stat file of motif orientation
+
+
 # FootprintC
 awk '{if($1!~/chr[CLMT]/ && $4!~/chr[CLMT]/ && $8!="no_adapterno_adapterno_adapter") print $0}' /mnt/disk1/6/lxk/private/FootprintC/220725_FootprintC_K562_FA_EGS,FA_0percentSDS_4,8ulDNase_30m_noHI_rtaq_S,L-link_liga16C4h_exo1h_gDNA50-150/fragment_Length_R1r4/FootprintC_K562_FA_UMI_rmdup.pair > FootprintC_K562_FA_UMI_rmdup_wlink_nochrCLMT.pair
 awk '{print $1"\t"$2"\t"$3"\t"NR"\t"$10}' FootprintC_K562_FA_UMI_rmdup_wlink_nochrCLMT.pair | sort -k1,1 -k2,2n -S 9G > 1_sort.uppair
