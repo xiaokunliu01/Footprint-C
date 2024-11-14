@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # calculate frequency of unique motif annotation of fragments from different Hi-C datasets
-# 1. takes file: .pair file
-#    applies tool: cooltools
-#    produces output: PC1 value file
+# 1. takes file: .pair file and .motif file
+#    applies tool: closestBed and groupBy in deeptools
+#    produces output: frequency of unique motif annotation
 
 
 awk '{print $1"\t"int($2/2+$3/2)"\t"int($2/2+$3/2)+1"\t"NR"\t"$5"\t"$6"\t"$4}' /mnt/disk4/public/RefBed/motif/homer.KnownMotifs.hg38.191020.bed > homer_hg38.motif
