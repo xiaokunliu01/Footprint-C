@@ -42,7 +42,11 @@ bash FootprintC_preprocessing.sh <example1>
 
 ## Enrichment analysis
 The fragment contact pairs of Footprint-C or other Hi-C datasets were first converted to single alignment BED files. Alignments of other Hi-C datasets were scaled to 60 bp, the median fragment length of Footprint-C. genomeCoverageBed in bedtools were used to compute normalized signal (reads per million for hg38). The average signal distribution relative to the occupied CTCF motifs and distal DNase I hypersensitive sites (dDHS) was computed across ±500 bp by computeMatrix in deepTools. The average signal of Read 1 or Read 2 alignments in HiCAR dataset around the occupied CTCF motifs and dDHS were calculated respectively. The list of functional CTCF motifs was generated as described previously. The sets of occupied CTCF motifs in K562 and GM12878 were screened by respective CTCF ChIP-seq datasets, and only those with an average RPM > 1 within a 30 bp window surrounding the motif center base were kept. The set of DHS in K562 or GM12878 cells was called from respective DNase-seq dataset using MACS2. DHS with q values > 20 and distance from TSS > 1 kb were defined dDHS.
-The script is ```analysis/enrichment_analysis.sh``` 
+
+The script is
+```
+analysis/enrichment_analysis.sh
+``` 
 
 ## Loop calling
 Loops were computed using Mustache or Chromosight. For Mustache, loops were called at 5-kb resolution using the options ```-r 5000 --pThreshold 0.1```. For Chromosight, loops were called by Chromosight detect function at 5-kb resolution. Loops smaller than 20 kb were removed. Common and specific loops between Footprint-C and Micro-C were characterized as described previously (PMID: 33239788). Loops with both anchors overlapping were called as common loops. Loops with one or neither anchor overlapping were called as specific loops. Anchors were extended ±20 kb, and pairtopair in bedtools were used to characterize common loops with parameters ```-type both -f 0.5```. Footprint-C or Micro-C specific loops were characterized with parameters ```-type notboth -slop 40000```.
