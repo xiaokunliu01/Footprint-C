@@ -1,5 +1,6 @@
 #/bin/bash
 
+# call loop or stripe
 # 1. takes file: .allValidPairs file and hg38_chromsize.txt file
 #    applies tool: hicpro2higlass.sh and cooler
 #    produces output: .mcool file
