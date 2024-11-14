@@ -1,12 +1,13 @@
 #/bin/bash
 
+# calculate the stratum-adjusted correlation coefficient
 # 1. takes file: .allValidPairs file and hg38_chromsize_min.txt file
 #    applies tool: hicpro2higlass.sh 
 #    produces output: .mcool file
 
 # 2. takes file: .mcool file
 #    applies tool: hicpro2higlass.sh 
-#    produces output: the stratum-adjusted correlation coefficient file
+#    produces output: the stratum-adjusted correlation coefficient
 
 
 # generate .mcool file
