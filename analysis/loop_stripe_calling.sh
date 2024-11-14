@@ -26,7 +26,7 @@ done
 for i in FootprintC MicroC HiC
 do
 mustache -f K562_$i'.'cool -r 5000 --pThreshold 0.1 -p 20 -o K562_$i'_'5kb.bedpe
-chromosight detect -t12 --pattern=loops_small --min-dist=15000 --max-dist=2000000 K562_$i'_'600M.cool K562_$i_600M'_'loop.bed
+chromosight detect -t12 K562_$i'_'600M.cool K562_$i_600M'_'loop.bed
 done
 
 # call stripes
