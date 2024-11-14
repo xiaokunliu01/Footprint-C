@@ -58,11 +58,22 @@ The script is
 analysis/loop_stripe_calling.sh
 ``` 
 
+## Compartment analysis
+The compartments were identified at 100-kb resolution using cooltools package. The eigenvector of the first principal component represents the compartment profile, with positive and negative values representing A and B compartments respectively.
+
+The script is
+```
+analysis/compartment_PC1_value.py
+```
+
 ## Insulation score analysis
 The insulation scores were calculated at 40-kb resolution using the cooltools package.
 
-## Compartment analysis
-The compartments were identified at 100-kb resolution using cooltools package. The eigenvector of the first principal component represents the compartment profile, with positive and negative values representing A and B compartments respectively.
+The script is
+```
+analysis/insulation_score.py
+``` 
+
 
 ## Motif uniqueness analysis
 The fragment contact pairs of Footprint-C and other Hi-C datasets were first converted to single fragment BED files. The Footprint-C fragments less than or equal to 60 bp in length were kept for analysis. The fragments of in situ Hi-C were extended to the nearest GATC site (DpnII). The fragments of BL-Hi-C were extended to the nearest GGCC sites (HaeIII). The fragments of Hi-TrAC were extended to the nearest AATT or CATG sites (MluCI or NlaIII). The fragments of HiCAR were extended to the nearest GTAC sites (CviQI). The fragments of Micro-C were extended ±75 bp from the center base. Fragment coordinates were then intersected with all HOMER motif coordinates by intersectBed in bedtools. Finally, the proportions of fragments from Footprint-C, in situ Hi-C, BL-Hi-C, Hi-TrAC, HiCAR, or Micro-C datasets annotated with zero, one or multiple motifs were calculated.
