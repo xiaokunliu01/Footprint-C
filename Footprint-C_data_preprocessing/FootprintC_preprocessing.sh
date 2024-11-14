@@ -18,7 +18,7 @@
 
 # 5. takes file: .bam file
 #    applies tools: bamToBed
-#    produces output: fragment contact pairs file and fragment length file
+#    produces output: .pair file and fragment length file
 
 
 mkdir fastqc/
