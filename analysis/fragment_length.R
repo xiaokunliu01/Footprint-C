@@ -1,3 +1,5 @@
+# Plot fragment length distribution density map
+
 setwd("Footprint-C/fragment_Length/")
 library(RColorBrewer)
 library(ggplot2)
