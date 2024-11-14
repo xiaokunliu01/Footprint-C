@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# calculate frequency of motif orientation of CTCF-CTCF contacts from different Hi-C datasets
 # 1. takes file: .allValidPairs file and .motif file
 #    applies tool: closestBed and stat_noextent.awk script
 #    produces output: .stat file of motif orientation
