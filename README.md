@@ -74,16 +74,36 @@ The script is
 analysis/insulation_score.py
 ``` 
 
-
 ## Motif uniqueness analysis
 The fragment contact pairs of Footprint-C and other Hi-C datasets were first converted to single fragment BED files. The Footprint-C fragments less than or equal to 60 bp in length were kept for analysis. The fragments of in situ Hi-C were extended to the nearest GATC site (DpnII). The fragments of BL-Hi-C were extended to the nearest GGCC sites (HaeIII). The fragments of Hi-TrAC were extended to the nearest AATT or CATG sites (MluCI or NlaIII). The fragments of HiCAR were extended to the nearest GTAC sites (CviQI). The fragments of Micro-C were extended ±75 bp from the center base. Fragment coordinates were then intersected with all HOMER motif coordinates by intersectBed in bedtools. Finally, the proportions of fragments from Footprint-C, in situ Hi-C, BL-Hi-C, Hi-TrAC, HiCAR, or Micro-C datasets annotated with zero, one or multiple motifs were calculated.
 
+The script is
+```
+analysis/motif_uniqueness_analysis.sh
+``` 
+
 ## Analysis of motif orientation of CTCF-CTCF contacts
-The closest CTCF motif to upstream and downstream read pair within contacts from Footprint-C or others Hi-C datasets was obtained by bedtools closestBed with parameters: -t first. Only the contacts with both alignments overlapping with center base of a CTCF motif were counted. The frequencies of CTCF contacts were calculated according to the orientations of the two motifs (+-: convergent, ++: tandem F, -+: divergent, --: tandem R).
+The closest CTCF motif to upstream and downstream read pair within contacts from Footprint-C or others Hi-C datasets was obtained by bedtools closestBed with parameters: ```-t first```. Only the contacts with both alignments overlapping with center base of a CTCF motif were counted. The frequencies of CTCF contacts were calculated according to the orientations of the two motifs (+-: convergent, ++: tandem F, -+: divergent, --: tandem R).
+
+The script is
+```
+analysis/motif_orientation_of_CTCF_CTCF_contact_in_pair.sh
+``` 
 
 ## Construction of TF motif-based contact maps
 The lists of functional CTCF or MAZ motifs were generated as described previously (PMID: 29590048). The motifs were sorted by genome coordinates, indexed, and used to construct a genome-wide 2D contact map. The Footprint-C fragments were annotated by the indexed motifs. The contact pairs with motifs annotated on both fragments were extracted and dumped to the respective bins in the 2D contact map. The counts in each bin were shaded by four different colors according to the orientations of the two motifs (+-, ++, -+, --). The motif-based contact maps were plotted using ggplot2, and were merged using Adobe Illustrator.
 
+The script is
+```
+analysis/heatmap_based_motif.sh
+``` 
+And R script ```analysis/plot_heatmap_based_motif.R ``` to visualize
 
 ## Reproducibility analysis
 The stratum-adjusted correlation coefficient using HiCRep73 was calculated for 100-kb resolution contact matrices by parameters settings of ```--h 1 --dBPMax 100000 --binSize 100000```. Comparisons were done between two biological replicates of Footprint-C libraries, or between Footprint-C and Micro-C or in situ Hi-C libraries.
+
+The script is
+```
+analysis/stratum_adjusted_correlation_coefficient.sh
+``` 
+
