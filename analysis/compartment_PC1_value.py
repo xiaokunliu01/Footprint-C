@@ -1,3 +1,7 @@
+# 1. takes file: .cool file
+#    applies tool: cooltools
+#    produces output: PC1 value file
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
