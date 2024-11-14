@@ -58,9 +58,13 @@ The script is
 analysis/loop_stripe_calling.sh
 ``` 
 ## Pile-up plots
-Aggregate plots of loops in DMSO or dTAG-7 treated HEK293T was plotted using coolpup.py. The loops were from Footprint-C in WT HEK293T, and were aggregated at the center of a ±200 kb window at 5-kb resolution.
+Aggregate plots of loops in DMSO or dTAG-7 treated HEK293T was plotted by coolpup.py. The loops were from Footprint-C in WT HEK293T, and were aggregated at the center of a ±200 kb window at 5-kb resolution.
+
 The detailed implementation process is in Jypyter notebook ```analysis/pileup_loop.ipynb```
 
+Aggregation plot centered at DNase-seq specific, common, or Footprint-C specific peak summits was also plotted by coolpup.py.. The contact matrices were aggregated around summits ±1000 kb at 10-kb resolution.
+
+The detailed implementation process is in Jypyter notebook ```analysis/pileup_local.ipynb```
 
 ## Compartment analysis
 The compartments were identified at 100-kb resolution using cooltools package. The eigenvector of the first principal component represents the compartment profile, with positive and negative values representing A and B compartments respectively.
