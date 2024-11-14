@@ -48,11 +48,15 @@ The script is
 analysis/enrichment_analysis.sh
 ``` 
 
-## Loop calling
+## Loop and stripe calling
 Loops were computed using Mustache or Chromosight. For Mustache, loops were called at 5-kb resolution using the options ```-r 5000 --pThreshold 0.1```. For Chromosight, loops were called by Chromosight detect function at 5-kb resolution. Loops smaller than 20 kb were removed. Common and specific loops between Footprint-C and Micro-C were characterized as described previously (PMID: 33239788). Loops with both anchors overlapping were called as common loops. Loops with one or neither anchor overlapping were called as specific loops. Anchors were extended ±20 kb, and pairtopair in bedtools were used to characterize common loops with parameters ```-type both -f 0.5```. Footprint-C or Micro-C specific loops were characterized with parameters ```-type notboth -slop 40000```.
 
-## Stripe calling
 Stripes were called from contact matrices using Stripenn or StripeCaller. The stripes were called by Stripenn at 5-kb resolution with the following settings: ```-m 0.95,0.96,0.97,0.98,0.99 -p 0.1```. Stripes were called by StripeCaller with the following settings: ```--local-num 2 --fold-enrichment 1.1 --min-seed-len 6```. Pile-up plots of stripes were obtained using coolpup.py, with the following settings: ```--local --rescale```. The loop domains in Supplementary Fig. 4k were annotated by horizontal and vertical stripes obtained by Stripenn, and were divided into four types of left-, right-, both-sided, and no stripe loops.
+
+The script is
+```
+analysis/loop_stripe_calling.sh
+``` 
 
 ## Insulation score analysis
 The insulation scores were calculated at 40-kb resolution using the cooltools package.
