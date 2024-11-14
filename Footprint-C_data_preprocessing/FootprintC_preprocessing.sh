@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# script of Footprint-C data preprocessing
 # 1. takes file: Footprint-C fastq file
 #    applies tool: FastQC 
 #    produces output: quality report file
