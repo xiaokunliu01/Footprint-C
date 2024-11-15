@@ -3,7 +3,7 @@ title: "plot heatmap"
 output: html_notebook
 ---
 
-plot heatmap of TF-TF pairs ranked by counts of homogeneous pairs when the two mates are > 10 kb apart in K562. 
+plot heatmap of TF-TF pairs ranked by counts of homogeneous pairs when the two mates are 0.3-10 kb apart in K562. 
 
 
 ```{r}
