@@ -1,0 +1,83 @@
+---
+title: "plot heatmap"
+output: html_notebook
+---
+
+plot heatmap of TF-TF pairs ranked by counts of homogeneous pairs when the two mates are > 10 kb apart in K562. 
+
+
+```{r}
+# setwd(dir = "/home/lxk/ad1/DNaseC/DNaseC_paper/response_R1/ZNF143/dimerization/K562/heatmap/dist_300-10kb/")
+library(tidyverse)
+# png("heatmap_cis_dis1k_17list.png", units = "in", width = 10, height = 10, res = 300, bg = "transparent")
+# pdf("stat_count_cis_dis300_10kb_13protein.pdf", width = 10, height = 10, bg = "transparent")
+
+df <- read.table("stat_count_cis_dis300_10kb_13protein.txt",sep = "\t", header = T)
+df <- df %>% pivot_longer(cols = -"name", names_to = "down_name", values_to = "pair number")
+p <- df %>%
+  ggplot(aes(x = name, y = down_name)) +
+  geom_tile(aes(fill = `pair number`)) +
+  scale_fill_gradient2(
+    name = "",
+    low = "blue",
+    mid = "white",
+    high = "firebrick", #b12425
+    # midpoint = 50000,
+    space = "Lab",
+    na.value = "firebrick",
+    guide = "colourbar",
+    aesthetics = "fill",
+    limit = c(0,100000),
+    breaks = c(0,50000,100000),
+    # ,150000,200000,250000
+    labels = c(0,50,"100+"),
+    # ,150,200,250
+  ) +
+  guides(fill = guide_colorbar(
+    title = "count (k)",
+    # label.hjust = unit(-1,"cm"),
+    # label.vjust = 1,
+    # label.theme = element_text(
+    #   size = 10,
+    #   colour = "black",
+    # )
+  ))+
+  xlab("") + # up anchor
+  ylab("") + # down anchor
+  # labs(title = "CTCF HiChIP Tandem F loop") +
+  scale_x_discrete(
+    limits = c("MAZ","TFDP1","CTCF","EGR1","KLF","SP","MTF2","RBAK","VEZF1","E2F4","CDC5L","ZNF143","ZFP69B"),
+    breaks=c("MAZ","TFDP1","CTCF","EGR1","KLF","SP","MTF2","RBAK","VEZF1","E2F4","CDC5L","ZNF143","ZFP69B"),
+    # limits = c("CTCF","MAZ","EGR1","KLF","SP","TFDP1","ZNF143","MTF2","E2F4","CDC5L","RBAK","VEZF1","ZFP69B"),
+    # breaks=c("CTCF","MAZ","EGR1","KLF","SP","TFDP1","ZNF143","MTF2","E2F4","CDC5L","RBAK","VEZF1","ZFP69B"),
+    expand = c(0,0)
+  ) +
+  scale_y_discrete(
+    limits = c("MAZ","TFDP1","CTCF","EGR1","KLF","SP","MTF2","RBAK","VEZF1","E2F4","CDC5L","ZNF143","ZFP69B"),
+    breaks=c("MAZ","TFDP1","CTCF","EGR1","KLF","SP","MTF2","RBAK","VEZF1","E2F4","CDC5L","ZNF143","ZFP69B"),
+    # limits = c("CTCF","MAZ","EGR1","KLF","SP","TFDP1","ZNF143","MTF2","E2F4","CDC5L","RBAK","VEZF1","ZFP69B"),
+    # breaks=c("CTCF","MAZ","EGR1","KLF","SP","TFDP1","ZNF143","MTF2","E2F4","CDC5L","RBAK","VEZF1","ZFP69B"),
+    expand = c(0,0)
+  ) +
+  theme(axis.text = element_text(color = "black", size = 20), 
+        # face = "bold",
+        axis.title = element_text(color = "black"),
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+        panel.border = element_blank(), 
+        panel.grid = element_blank(),
+        panel.background = element_blank(), 
+        # legend.position = "none",
+        legend.key.height = unit(1.2, "cm"), 
+        legend.text = element_text(color = "black",size = 20),
+        legend.title = element_text(color = "black",size = 20),
+        legend.text.align = 0,
+        rect = element_rect(fill = NA, size=0, color = NA),
+        plot.background = element_rect(fill = NA, size=0, color = NA),
+        legend.background = element_rect(fill = NA, size=0, color = NA),
+        legend.key = element_rect(fill = NA, size=0, color = NA),
+  ) +
+  coord_equal(ratio = 1)
+
+p
+# dev.off()
+```
