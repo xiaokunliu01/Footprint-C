@@ -117,3 +117,5 @@ The script is
 analysis/stratum_adjusted_correlation_coefficient.sh
 ``` 
 
+## Reference
+Liu, X.#, Wei, H.#, Zhang, Q., Zhang, N., Wu, Q., Xu, Ch.* Footprint-C reveals transcription factor modes in local clustering and mediating chromatin interactions. _Nat Commun_. 
