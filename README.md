@@ -118,4 +118,4 @@ analysis/stratum_adjusted_correlation_coefficient.sh
 ``` 
 
 ## Reference
-Liu, X.#, Wei, H.#, Zhang, Q., Zhang, N., Wu, Q., Xu, C. Footprint-C reveals transcription factor modes in local clusters and long-range chromatin interactions. _Nat. Commun._ (2024). (accepted)
+Liu, X.#, Wei, H.#, Zhang, Q., Zhang, N., Wu, Q., Xu, C. Footprint-C reveals transcription factor modes in local clusters and long-range chromatin interactions. _Nat. Commun._ 2024. (accepted)
